@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Is it an anagram? </title>
+</head>
+<body>
+    <script>
+
+        function anagram(input1, input2) {
+
+            input1 = input1.replace(/\s/g, '').toLowerCase();
+            input2 = input2.replace(/\s/g, '').toLowerCase();
+
+            var sortedInput1 = input1.split('').sort().join('');
+            var sortedInput2 = input2.split('').sort().join('');
+
+            if (sortedInput1 === sortedInput2) {
+                return true; 
+            } else {
+                return false; 
+            }
+        }
+
+        var word1 = prompt("Enter the first word/phrase:");
+        var word2 = prompt("Enter the second word/phrase:");
+
+        var Anagrams = anagram(word1, word2);
+
+        if (Anagrams) {
+            alert("YAY!! "+"'" + word1 + "' and '" + word2 + "' are anagrams! ヾ(≧▽≦*)o");
+        } else {
+            alert("Oops! "+"'" + word1 + "' and '" + word2 + "' are not anagrams! Try again `(*>﹏<*)′");
+        }
+    </script>
+</body>
+</html>
